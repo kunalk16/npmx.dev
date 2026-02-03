@@ -11,6 +11,7 @@ import { joinURL } from 'ufo'
 import { areUrlsEquivalent } from '#shared/utils/url'
 import { isEditableElement } from '~/utils/input'
 import { formatBytes } from '~/utils/formatters'
+import { getDependencyCount } from '~/utils/npm/dependency-count'
 import { NuxtLink } from '#components'
 import { useModal } from '~/composables/useModal'
 import { useAtproto } from '~/composables/atproto/useAtproto'
@@ -298,11 +299,6 @@ function normalizeGitUrl(url: string): string {
     .replace(/\.git$/, '')
     .replace(/^ssh:\/\/git@github\.com/, 'https://github.com')
     .replace(/^git@github\.com:/, 'https://github.com/')
-}
-
-function getDependencyCount(version: PackumentVersion | null): number {
-  if (!version?.dependencies) return 0
-  return Object.keys(version.dependencies).length
 }
 
 // Check if a version has provenance/attestations
