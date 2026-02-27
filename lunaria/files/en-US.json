@@ -372,6 +372,7 @@
       "date_range_multiline": "{start}\nto {end}",
       "download_file": "Download {fileType}",
       "toggle_annotator": "Toggle annotator",
+      "toggle_stack_mode": "Toggle stack mode",
       "legend_estimation": "Estimation",
       "no_data": "No data available",
       "y_axis_label": "{granularity} {facet}",
